@@ -62,9 +62,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Infrastructure
 
-- [ ] **INFR-01**: App supports Spanish and English with language toggle
-- [ ] **INFR-02**: App is fully responsive and usable on mobile browsers at the gym
-- [ ] **INFR-03**: All weights accept both comma and period as decimal separators
+- [x] **INFR-01**: App supports Spanish and English with language toggle
+- [x] **INFR-02**: App is fully responsive and usable on mobile browsers at the gym
+- [x] **INFR-03**: All weights accept both comma and period as decimal separators
 
 ## v2 Requirements
 
@@ -132,9 +132,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DASH-01 | Phase 2 | Pending |
 | DASH-02 | Phase 2 | Pending |
 | DASH-03 | Phase 2 | Pending |
-| INFR-01 | Phase 1 | Pending |
-| INFR-02 | Phase 1 | Pending |
-| INFR-03 | Phase 1 | Pending |
+| INFR-01 | Phase 1 | Complete |
+| INFR-02 | Phase 1 | Complete |
+| INFR-03 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 32 total

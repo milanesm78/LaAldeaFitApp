@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 1 of 4 (Foundation and Exercise Library)
-Plan: 0 of 3 in current phase
-Status: Ready to plan
-Last activity: 2026-02-23 -- Roadmap created
+Plan: 1 of 3 in current phase
+Status: Executing
+Last activity: 2026-02-23 -- Completed 01-01-PLAN.md
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█░░░░░░░░░] 10%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
-- Average duration: -
-- Total execution time: 0 hours
+- Total plans completed: 1
+- Average duration: 20min
+- Total execution time: 0.3 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 1 | 1 | 20min | 20min |
 
 **Recent Trend:**
-- Last 5 plans: -
-- Trend: -
+- Last 5 plans: 01-01 (20min)
+- Trend: Starting
 
 *Updated after each plan completion*
 
@@ -44,6 +44,12 @@ Recent decisions affecting current work:
 
 - [Roadmap]: 4 phases derived from requirement dependencies -- foundation first, then training loop, then visualization, then intelligence
 - [Roadmap]: PLAN-05 and PLAN-06 (cycle length and plan versioning) placed in Phase 2 with the plan builder, not deferred to Phase 4, because the data model must support immutability from the start (research flagged this as critical pitfall)
+- [01-01]: Used @vitejs/plugin-react-swc for faster builds
+- [01-01]: Bundled translations directly instead of HTTP lazy loading (only 2 languages)
+- [01-01]: Spanish as fallback language per primary user base
+- [01-01]: Zinc palette for shadcn/ui with dark/light theme CSS variables
+- [01-01]: 10 granular RLS policies (separate per operation, never FOR ALL)
+- [01-01]: Custom Access Token Hook for JWT role injection (not user_metadata)
 
 ### Pending Todos
 
@@ -51,12 +57,12 @@ None yet.
 
 ### Blockers/Concerns
 
-- [Research]: Exact library versions need verification via npm before project initialization (training data from May 2025)
+- [01-01]: Supabase project must be created and .env.local configured before Plan 02 can fully work
 - [Research]: Anthropometric measurement ranges should be confirmed with Javier before Phase 3
 - [Research]: Auto-progression rule specifics (which sets count, session threshold, fixed vs variable increment) must be clarified with Javier before Phase 4
 
 ## Session Continuity
 
 Last session: 2026-02-23
-Stopped at: Roadmap created, ready for Phase 1 planning
-Resume file: None
+Stopped at: Completed 01-01-PLAN.md (foundation infrastructure)
+Resume file: .planning/phases/01-foundation-and-exercise-library/01-01-SUMMARY.md
