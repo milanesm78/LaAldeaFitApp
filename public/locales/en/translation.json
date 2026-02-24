@@ -6,17 +6,41 @@
     "edit": "Edit",
     "loading": "Loading...",
     "error": "An error occurred",
-    "confirm_delete": "Are you sure you want to delete this?"
+    "confirm_delete": "Are you sure you want to delete this?",
+    "or": "or",
+    "welcome": "Welcome"
   },
   "auth": {
     "login": "Log in",
+    "login_title": "Welcome back",
+    "login_subtitle": "Enter your credentials to access your account",
     "register": "Sign up",
+    "register_title": "Create an account",
+    "register_subtitle": "Enter your information to get started",
     "logout": "Log out",
     "email": "Email",
+    "email_placeholder": "your@email.com",
     "password": "Password",
+    "password_placeholder": "Enter your password",
     "full_name": "Full name",
+    "full_name_placeholder": "Enter your full name",
+    "role": "I am a",
+    "role_trainer": "Trainer",
+    "role_client": "Client",
+    "no_account": "Don't have an account?",
+    "have_account": "Already have an account?",
+    "login_error": "Invalid email or password",
+    "register_success": "Account created successfully!",
+    "register_client_note": "Your account will need to be activated by your trainer before you can access training features.",
+    "password_min": "Password must be at least 6 characters",
+    "name_required": "Full name is required",
+    "email_required": "Email is required",
+    "email_invalid": "Please enter a valid email address",
     "pending_title": "Account pending",
-    "pending_message": "Your account is pending approval. Your trainer will activate it soon."
+    "pending_message": "Your account is pending approval. Your trainer will activate it soon.",
+    "pending_reassurance": "You can use this time to set your preferred language and theme.",
+    "signing_in": "Signing in...",
+    "creating_account": "Creating account..."
   },
   "exercises": {
     "title": "Exercise Library",
@@ -32,7 +56,8 @@
     "dashboard": "Dashboard",
     "exercises": "Exercises",
     "clients": "Clients",
-    "settings": "Settings"
+    "settings": "Settings",
+    "workouts": "Workouts"
   },
   "theme": {
     "light": "Light",
@@ -43,5 +68,22 @@
     "toggle": "Toggle language",
     "spanish": "Spanish",
     "english": "English"
+  },
+  "trainer": {
+    "dashboard_title": "Client Management",
+    "no_clients": "No clients registered yet",
+    "no_clients_description": "When clients sign up, they will appear here for activation.",
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "status_active": "Active",
+    "status_pending": "Pending",
+    "client_activated": "Client activated successfully",
+    "client_deactivated": "Client deactivated"
+  },
+  "client": {
+    "welcome_title": "Welcome, {{name}}!",
+    "welcome_message": "Your training plan is coming soon.",
+    "welcome_description": "Your trainer is preparing your personalized program. Check back soon!",
+    "home": "Home"
   }
 }

@@ -6,25 +6,49 @@
     "edit": "Editar",
     "loading": "Cargando...",
     "error": "Ha ocurrido un error",
-    "confirm_delete": "¿Estás seguro de que quieres eliminar esto?"
+    "confirm_delete": "Estas seguro de que quieres eliminar esto?",
+    "or": "o",
+    "welcome": "Bienvenido"
   },
   "auth": {
-    "login": "Iniciar sesión",
+    "login": "Iniciar sesion",
+    "login_title": "Bienvenido de nuevo",
+    "login_subtitle": "Ingresa tus credenciales para acceder a tu cuenta",
     "register": "Registrarse",
-    "logout": "Cerrar sesión",
-    "email": "Correo electrónico",
-    "password": "Contraseña",
+    "register_title": "Crear una cuenta",
+    "register_subtitle": "Ingresa tu informacion para comenzar",
+    "logout": "Cerrar sesion",
+    "email": "Correo electronico",
+    "email_placeholder": "tu@email.com",
+    "password": "Contrasena",
+    "password_placeholder": "Ingresa tu contrasena",
     "full_name": "Nombre completo",
+    "full_name_placeholder": "Ingresa tu nombre completo",
+    "role": "Soy",
+    "role_trainer": "Entrenador",
+    "role_client": "Cliente",
+    "no_account": "No tienes una cuenta?",
+    "have_account": "Ya tienes una cuenta?",
+    "login_error": "Correo o contrasena invalidos",
+    "register_success": "Cuenta creada exitosamente!",
+    "register_client_note": "Tu cuenta necesitara ser activada por tu entrenador antes de poder acceder a las funciones de entrenamiento.",
+    "password_min": "La contrasena debe tener al menos 6 caracteres",
+    "name_required": "El nombre completo es obligatorio",
+    "email_required": "El correo electronico es obligatorio",
+    "email_invalid": "Por favor ingresa un correo electronico valido",
     "pending_title": "Cuenta pendiente",
-    "pending_message": "Tu cuenta está pendiente de aprobación. Tu entrenador la activará pronto."
+    "pending_message": "Tu cuenta esta pendiente de aprobacion. Tu entrenador la activara pronto.",
+    "pending_reassurance": "Puedes usar este tiempo para configurar tu idioma y tema preferido.",
+    "signing_in": "Iniciando sesion...",
+    "creating_account": "Creando cuenta..."
   },
   "exercises": {
     "title": "Biblioteca de ejercicios",
-    "add": "Añadir ejercicio",
+    "add": "Anadir ejercicio",
     "name": "Nombre del ejercicio",
     "youtube_url": "Enlace de YouTube",
-    "no_exercises": "No hay ejercicios todavía",
-    "delete_confirm": "¿Eliminar este ejercicio?",
+    "no_exercises": "No hay ejercicios todavia",
+    "delete_confirm": "Eliminar este ejercicio?",
     "edit": "Editar ejercicio",
     "save": "Guardar ejercicio"
   },
@@ -32,7 +56,8 @@
     "dashboard": "Panel",
     "exercises": "Ejercicios",
     "clients": "Clientes",
-    "settings": "Ajustes"
+    "settings": "Ajustes",
+    "workouts": "Entrenamientos"
   },
   "theme": {
     "light": "Claro",
@@ -41,7 +66,24 @@
   },
   "language": {
     "toggle": "Cambiar idioma",
-    "spanish": "Español",
-    "english": "Inglés"
+    "spanish": "Espanol",
+    "english": "Ingles"
+  },
+  "trainer": {
+    "dashboard_title": "Gestion de Clientes",
+    "no_clients": "Aun no hay clientes registrados",
+    "no_clients_description": "Cuando los clientes se registren, apareceran aqui para su activacion.",
+    "activate": "Activar",
+    "deactivate": "Desactivar",
+    "status_active": "Activo",
+    "status_pending": "Pendiente",
+    "client_activated": "Cliente activado exitosamente",
+    "client_deactivated": "Cliente desactivado"
+  },
+  "client": {
+    "welcome_title": "Bienvenido, {{name}}!",
+    "welcome_message": "Tu plan de entrenamiento llegara pronto.",
+    "welcome_description": "Tu entrenador esta preparando tu programa personalizado. Vuelve pronto!",
+    "home": "Inicio"
   }
 }
