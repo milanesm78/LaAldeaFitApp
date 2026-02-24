@@ -8,6 +8,7 @@ import { useAuth } from "@/features/auth/hooks/useAuth";
 import { LoginPage } from "@/pages/LoginPage";
 import { RegisterPage } from "@/pages/RegisterPage";
 import { TrainerDashboard } from "@/pages/trainer/TrainerDashboard";
+import { ExercisesPage } from "@/pages/trainer/ExercisesPage";
 import { ClientHome } from "@/pages/client/ClientHome";
 import { PendingActivationPage } from "@/pages/client/PendingActivationPage";
 
@@ -49,14 +50,7 @@ function App() {
         >
           <Route element={<TrainerLayout />}>
             <Route path="/trainer" element={<TrainerDashboard />} />
-            <Route
-              path="/trainer/exercises"
-              element={
-                <div className="text-muted-foreground">
-                  Exercise library coming in Plan 03...
-                </div>
-              }
-            />
+            <Route path="/trainer/exercises" element={<ExercisesPage />} />
           </Route>
         </Route>
 
