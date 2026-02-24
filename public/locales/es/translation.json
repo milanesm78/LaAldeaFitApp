@@ -1,0 +1,47 @@
+{
+  "common": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "confirm_delete": "¿Estás seguro de que quieres eliminar esto?"
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "logout": "Cerrar sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "full_name": "Nombre completo",
+    "pending_title": "Cuenta pendiente",
+    "pending_message": "Tu cuenta está pendiente de aprobación. Tu entrenador la activará pronto."
+  },
+  "exercises": {
+    "title": "Biblioteca de ejercicios",
+    "add": "Añadir ejercicio",
+    "name": "Nombre del ejercicio",
+    "youtube_url": "Enlace de YouTube",
+    "no_exercises": "No hay ejercicios todavía",
+    "delete_confirm": "¿Eliminar este ejercicio?",
+    "edit": "Editar ejercicio",
+    "save": "Guardar ejercicio"
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "exercises": "Ejercicios",
+    "clients": "Clientes",
+    "settings": "Ajustes"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro",
+    "toggle": "Cambiar tema"
+  },
+  "language": {
+    "toggle": "Cambiar idioma",
+    "spanish": "Español",
+    "english": "Inglés"
+  }
+}

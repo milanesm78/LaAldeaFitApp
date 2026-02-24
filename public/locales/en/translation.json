@@ -1,0 +1,47 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "confirm_delete": "Are you sure you want to delete this?"
+  },
+  "auth": {
+    "login": "Log in",
+    "register": "Sign up",
+    "logout": "Log out",
+    "email": "Email",
+    "password": "Password",
+    "full_name": "Full name",
+    "pending_title": "Account pending",
+    "pending_message": "Your account is pending approval. Your trainer will activate it soon."
+  },
+  "exercises": {
+    "title": "Exercise Library",
+    "add": "Add exercise",
+    "name": "Exercise name",
+    "youtube_url": "YouTube link",
+    "no_exercises": "No exercises yet",
+    "delete_confirm": "Delete this exercise?",
+    "edit": "Edit exercise",
+    "save": "Save exercise"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "exercises": "Exercises",
+    "clients": "Clients",
+    "settings": "Settings"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "toggle": "Toggle theme"
+  },
+  "language": {
+    "toggle": "Toggle language",
+    "spanish": "Spanish",
+    "english": "English"
+  }
+}
