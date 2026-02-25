@@ -55,6 +55,9 @@ Recent decisions affecting current work:
 - [01-02]: Database types restructured to explicit field listings for Supabase v2 typed client compatibility
 - [01-02]: Role selection via toggle buttons for better mobile UX
 - [01-02]: Bottom navigation for both portals with large touch targets for gym use
+- [quick-1]: Installed Supabase CLI via Homebrew for db push and config management
+- [quick-1]: Used supabase config push to enable Custom Access Token Hook and disable email confirmation remotely
+- [quick-1]: Added *.tsbuildinfo to .gitignore to exclude TypeScript build cache
 
 ### Pending Todos
 
@@ -62,12 +65,12 @@ None yet.
 
 ### Blockers/Concerns
 
-- [01-01]: Supabase project must be created and .env.local configured before auth features will fully work
+- ~~[01-01]: Supabase project must be created and .env.local configured before auth features will fully work~~ **RESOLVED** (quick-1, 2026-02-25)
 - [Research]: Anthropometric measurement ranges should be confirmed with Javier before Phase 3
 - [Research]: Auto-progression rule specifics (which sets count, session threshold, fixed vs variable increment) must be clarified with Javier before Phase 4
 
 ## Session Continuity
 
-Last session: 2026-02-24
-Stopped at: Completed 01-02-PLAN.md (auth system, routing, layouts)
-Resume file: .planning/phases/01-foundation-and-exercise-library/01-02-SUMMARY.md
+Last session: 2026-02-25
+Stopped at: Completed quick-1 (Supabase project connection)
+Resume file: .planning/quick/1-connect-project-to-supabase/1-SUMMARY.md
