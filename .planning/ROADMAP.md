@@ -49,7 +49,7 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Database schema, types, Zod schemas, query hooks, shared utilities (Phase 2 data layer)
+- [x] 02-01-PLAN.md — Database schema, types, Zod schemas, query hooks, shared utilities (Phase 2 data layer)
 - [ ] 02-02-PLAN.md — Training plan builder with nested form, exercise picker, versioning, trainer pages
 - [ ] 02-03-PLAN.md — Client plan view, YouTube exercise embed, workout session logging with pre-fill and steppers
 - [ ] 02-04-PLAN.md — Workout history, trainer dashboard with client status indicators, end-to-end verification
@@ -89,6 +89,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation and Exercise Library | 3/3 | Awaiting human verification | - |
-| 2. Core Training Loop | 0/4 | Not started | - |
+| 2. Core Training Loop | 1/4 | In progress | - |
 | 3. Measurements and Progress | 0/2 | Not started | - |
 | 4. Auto-Progression | 0/1 | Not started | - |

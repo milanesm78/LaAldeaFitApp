@@ -5,32 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-02-21)
 
 **Core value:** Clients always have their personalized training plan at their fingertips -- with video guidance, easy workout logging, and visible progress that keeps them engaged and coming back.
-**Current focus:** Phase 1: Foundation and Exercise Library
+**Current focus:** Phase 2: Core Training Loop
 
 ## Current Position
 
-Phase: 1 of 4 (Foundation and Exercise Library)
-Plan: 3 of 3 in current phase (Tasks 1 & 2 complete; Task 3 is human-verify checkpoint)
-Status: Awaiting human verification (Phase 1 checkpoint)
-Last activity: 2026-02-25 - Completed 01-03 Tasks 1 & 2; paused at human-verify checkpoint
+Phase: 2 of 4 (Core Training Loop)
+Plan: 1 of 4 in current phase
+Status: In progress
+Last activity: 2026-02-28 - Completed 02-01 (Phase 2 data layer)
 
-Progress: [███░░░░░░░] 30%
+Progress: [████░░░░░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: 12min
-- Total execution time: ~36min
+- Total plans completed: 4
+- Average duration: 11min
+- Total execution time: ~45min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1 | 3 | ~35min | 12min |
+| 2 | 1 | 9min | 9min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (20min), 01-02 (9min), 01-03 (~3min verification)
+- Last 5 plans: 01-01 (20min), 01-02 (9min), 01-03 (~3min verification), 02-01 (9min)
 - Trend: Accelerating
 
 *Updated after each plan completion*
@@ -62,6 +63,12 @@ Recent decisions affecting current work:
 - [01-03]: DecimalInput uses type=text+inputMode=decimal (not type=number) per GOV.UK research on numeric inputs
 - [01-03]: Mobile FAB positioned at bottom-20 to clear 64px bottom nav bar with breathing room
 - [01-03]: Query key factory pattern (exerciseKeys.all/list/detail) for granular cache invalidation
+- [02-01]: Separate RLS policies per operation for trainer (not FOR ALL) matching Phase 1 convention
+- [02-01]: is_trainer() SECURITY DEFINER helper for centralized JWT role checks across Phase 2 policies
+- [02-01]: Plan mutations use sequential inserts (plan -> days -> exercises) for FK integrity
+- [02-01]: useUpdateDraftPlan deletes and re-inserts days/exercises instead of patching
+- [02-01]: Optimistic updates on useLogSet for responsive gym-floor logging
+- [02-01]: Dashboard RPC with LATERAL JOINs computes all status in single query
 
 ### Pending Todos
 
@@ -81,6 +88,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-25
-Stopped at: 01-03 Tasks 1 & 2 complete; awaiting human verification at checkpoint Task 3
-Resume file: .planning/phases/01-foundation-and-exercise-library/01-03-SUMMARY.md
+Last session: 2026-02-28
+Stopped at: Completed 02-01-PLAN.md
+Resume file: .planning/phases/02-core-training-loop/02-01-SUMMARY.md

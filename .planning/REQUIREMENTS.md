@@ -17,25 +17,25 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Exercise Library
 
-- [ ] **EXER-01**: Trainer can create exercises with name and YouTube video link
-- [ ] **EXER-02**: Trainer can edit and delete exercises from the library
+- [x] **EXER-01**: Trainer can create exercises with name and YouTube video link
+- [x] **EXER-02**: Trainer can edit and delete exercises from the library
 - [ ] **EXER-03**: Client can view exercise with inline YouTube video embed from their workout view
 
 ### Training Plans
 
-- [ ] **PLAN-01**: Trainer can create a training plan for a specific client
-- [ ] **PLAN-02**: Trainer can organize a plan by training days (Day A, Day B, etc.)
-- [ ] **PLAN-03**: Trainer can add exercises to a training day with prescribed sets, reps, and weight
+- [x] **PLAN-01**: Trainer can create a training plan for a specific client
+- [x] **PLAN-02**: Trainer can organize a plan by training days (Day A, Day B, etc.)
+- [x] **PLAN-03**: Trainer can add exercises to a training day with prescribed sets, reps, and weight
 - [ ] **PLAN-04**: Client can view their assigned training plan grouped by training day
-- [ ] **PLAN-05**: Trainer can define training cycle length per client
-- [ ] **PLAN-06**: Plans are versioned -- editing a plan creates a new version for the next cycle, preserving historical data
+- [x] **PLAN-05**: Trainer can define training cycle length per client
+- [x] **PLAN-06**: Plans are versioned -- editing a plan creates a new version for the next cycle, preserving historical data
 
 ### Workout Logging
 
-- [ ] **WLOG-01**: Client can start a workout session for a training day
-- [ ] **WLOG-02**: Client can log weight and reps for each set of each exercise
-- [ ] **WLOG-03**: Workout session tracks start and completion time
-- [ ] **WLOG-04**: Client can view their workout history (past sessions with logged sets)
+- [x] **WLOG-01**: Client can start a workout session for a training day
+- [x] **WLOG-02**: Client can log weight and reps for each set of each exercise
+- [x] **WLOG-03**: Workout session tracks start and completion time
+- [x] **WLOG-04**: Client can view their workout history (past sessions with logged sets)
 
 ### Auto-Progression
 
@@ -56,8 +56,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Trainer Dashboard
 
-- [ ] **DASH-01**: Trainer can view list of all clients with activity status (active, inactive, pending)
-- [ ] **DASH-02**: Trainer sees color-coded indicators showing which clients completed today's workout
+- [x] **DASH-01**: Trainer can view list of all clients with activity status (active, inactive, pending)
+- [x] **DASH-02**: Trainer sees color-coded indicators showing which clients completed today's workout
 - [ ] **DASH-03**: Trainer can select a client to view their plan, logs, and progress
 
 ### Infrastructure
@@ -108,19 +108,19 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-03 | Phase 1 | Complete |
 | AUTH-04 | Phase 1 | Complete |
 | AUTH-05 | Phase 1 | Complete |
-| EXER-01 | Phase 1 | Pending |
-| EXER-02 | Phase 1 | Pending |
+| EXER-01 | Phase 1 | Complete |
+| EXER-02 | Phase 1 | Complete |
 | EXER-03 | Phase 2 | Pending |
-| PLAN-01 | Phase 2 | Pending |
-| PLAN-02 | Phase 2 | Pending |
-| PLAN-03 | Phase 2 | Pending |
+| PLAN-01 | Phase 2 | Complete |
+| PLAN-02 | Phase 2 | Complete |
+| PLAN-03 | Phase 2 | Complete |
 | PLAN-04 | Phase 2 | Pending |
-| PLAN-05 | Phase 2 | Pending |
-| PLAN-06 | Phase 2 | Pending |
-| WLOG-01 | Phase 2 | Pending |
-| WLOG-02 | Phase 2 | Pending |
-| WLOG-03 | Phase 2 | Pending |
-| WLOG-04 | Phase 2 | Pending |
+| PLAN-05 | Phase 2 | Complete |
+| PLAN-06 | Phase 2 | Complete |
+| WLOG-01 | Phase 2 | Complete |
+| WLOG-02 | Phase 2 | Complete |
+| WLOG-03 | Phase 2 | Complete |
+| WLOG-04 | Phase 2 | Complete |
 | PROG-01 | Phase 4 | Pending |
 | PROG-02 | Phase 4 | Pending |
 | BODY-01 | Phase 3 | Pending |
@@ -129,8 +129,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TRCK-01 | Phase 3 | Pending |
 | TRCK-02 | Phase 3 | Pending |
 | TRCK-03 | Phase 3 | Pending |
-| DASH-01 | Phase 2 | Pending |
-| DASH-02 | Phase 2 | Pending |
+| DASH-01 | Phase 2 | Complete |
+| DASH-02 | Phase 2 | Complete |
 | DASH-03 | Phase 2 | Pending |
 | INFR-01 | Phase 1 | Complete |
 | INFR-02 | Phase 1 | Complete |
