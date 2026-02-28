@@ -1,21 +1,85 @@
 import { useMemo } from "react";
-import { useParams, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { useClientDetail } from "@/features/dashboard/hooks/useDashboard";
-import { useClientPlans } from "@/features/plans/hooks/usePlans";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
+import { useActivePlan, useClientPlans } from "@/features/plans/hooks/usePlans";
 import { useCreatePlanVersion } from "@/features/plans/hooks/usePlanMutations";
 import { PlanCard } from "@/features/plans/components/plan-card";
 import { PlanVersionBanner } from "@/features/plans/components/plan-version-banner";
+import { WorkoutHistoryList } from "@/features/workouts/components/workout-history-list";
+import { useWorkoutHistory } from "@/features/workouts/hooks/useWorkouts";
 
-export function ClientPlanPage() {
-  const { clientId } = useParams<{ clientId: string }>();
+interface ClientDetailTabsProps {
+  clientId: string;
+  clientName: string;
+}
+
+/**
+ * Tabbed view of a specific client's data for the trainer.
+ * Tab 1: Plan (consolidated from ClientPlanPage) with version management
+ * Tab 2: Logs (client's recent workout sessions)
+ */
+export function ClientDetailTabs({
+  clientId,
+  clientName,
+}: ClientDetailTabsProps) {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const { data: clientData, isPending, error } = useClientDetail(clientId);
+  return (
+    <Tabs defaultValue="plan" className="w-full">
+      <TabsList className="w-full">
+        <TabsTrigger value="plan" className="flex-1">
+          {t("clientDetail.plan", "Plan")}
+        </TabsTrigger>
+        <TabsTrigger value="logs" className="flex-1">
+          {t("clientDetail.logs", "Logs")}
+        </TabsTrigger>
+      </TabsList>
+
+      <TabsContent value="plan">
+        <PlanTab
+          clientId={clientId}
+          clientName={clientName}
+          navigate={navigate}
+        />
+      </TabsContent>
+
+      <TabsContent value="logs">
+        <LogsTab clientId={clientId} />
+      </TabsContent>
+    </Tabs>
+  );
+}
+
+/**
+ * Plan tab: Active plan display, draft version banner, create/edit actions.
+ * Consolidates all functionality from the deleted ClientPlanPage.tsx.
+ */
+function PlanTab({
+  clientId,
+  clientName,
+  navigate,
+}: {
+  clientId: string;
+  clientName: string;
+  navigate: ReturnType<typeof useNavigate>;
+}) {
+  const { t } = useTranslation();
+  const {
+    data: activePlan,
+    isPending: planLoading,
+    error: planError,
+  } = useActivePlan(clientId);
+
   const { data: allPlans } = useClientPlans(clientId);
   const createVersion = useCreatePlanVersion();
 
@@ -25,12 +89,11 @@ export function ClientPlanPage() {
   }, [allPlans]);
 
   const handleEditPlan = () => {
-    if (!clientData?.activePlan || !clientId) return;
+    if (!activePlan) return;
 
-    // Create a new version from the active plan, then navigate to edit it
     createVersion.mutate(
       {
-        sourcePlanId: clientData.activePlan.id,
+        sourcePlanId: activePlan.id,
         clientId,
       },
       {
@@ -42,11 +105,11 @@ export function ClientPlanPage() {
   };
 
   const handleEditDraft = () => {
-    if (!draftPlan || !clientId) return;
+    if (!draftPlan) return;
     navigate(`/trainer/clients/${clientId}/plan/${draftPlan.id}/edit`);
   };
 
-  if (isPending) {
+  if (planLoading) {
     return (
       <div className="flex items-center justify-center py-12">
         <div className="h-8 w-8 animate-spin rounded-full border-4 border-muted border-t-primary" />
@@ -54,7 +117,7 @@ export function ClientPlanPage() {
     );
   }
 
-  if (error) {
+  if (planError) {
     return (
       <Card>
         <CardContent className="py-6">
@@ -64,31 +127,8 @@ export function ClientPlanPage() {
     );
   }
 
-  const profile = clientData?.profile;
-  const activePlan = clientData?.activePlan;
-  const clientName = profile?.full_name ?? profile?.email ?? "";
-
   return (
-    <div className="space-y-4">
-      {/* Header with back button */}
-      <div className="flex items-center gap-3">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="h-10 w-10"
-          onClick={() => navigate("/trainer/clients")}
-          aria-label={t("common.back", "Back")}
-        >
-          <ArrowLeft className="h-5 w-5" />
-        </Button>
-        <div>
-          <h1 className="text-xl font-bold">{clientName}</h1>
-          <p className="text-sm text-muted-foreground">
-            {t("trainer.clientPlan", "Training Plan")}
-          </p>
-        </div>
-      </div>
-
+    <div className="space-y-4 pt-2">
       {/* Draft version banner */}
       {draftPlan && (
         <PlanVersionBanner
@@ -146,6 +186,28 @@ export function ClientPlanPage() {
           {t("plans.createNewPlan", "Create New Plan")}
         </Button>
       )}
+    </div>
+  );
+}
+
+/**
+ * Logs tab: Shows client's recent workout sessions.
+ * Reuses WorkoutHistoryList component from the client history feature.
+ */
+function LogsTab({ clientId }: { clientId: string }) {
+  const { data: sessions, isPending } = useWorkoutHistory(clientId);
+
+  if (isPending) {
+    return (
+      <div className="flex items-center justify-center py-12">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-muted border-t-primary" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="pt-2">
+      <WorkoutHistoryList sessions={sessions ?? []} />
     </div>
   );
 }

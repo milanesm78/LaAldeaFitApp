@@ -171,6 +171,21 @@
     "spanish": "Spanish",
     "english": "English"
   },
+  "dashboard": {
+    "searchClients": "Search clients",
+    "searchPlaceholder": "Search clients...",
+    "noClients": "No clients registered yet",
+    "noResults": "No clients found",
+    "tryDifferentSearch": "Try a different search term.",
+    "clientCount": "{{count}} clients",
+    "todayStatus": "Today's status"
+  },
+  "clientDetail": {
+    "plan": "Plan",
+    "logs": "Logs",
+    "editPlan": "Edit Plan",
+    "noPlan": "No plan assigned"
+  },
   "status": {
     "active": "Active",
     "inactive": "Inactive",
@@ -179,7 +194,12 @@
     "archived": "Archived",
     "completed": "Completed",
     "inProgress": "In Progress",
-    "notStarted": "Not Started"
+    "notStarted": "Not Started",
+    "today": {
+      "completed": "Completed today",
+      "in_progress": "In progress",
+      "not_started": "Not started"
+    }
   },
   "trainer": {
     "dashboard_title": "Client Management",

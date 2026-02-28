@@ -8,12 +8,13 @@ import { useAuth } from "@/features/auth/hooks/useAuth";
 import { LoginPage } from "@/pages/LoginPage";
 import { RegisterPage } from "@/pages/RegisterPage";
 import { ClientsPage } from "@/pages/trainer/ClientsPage";
-import { ClientPlanPage } from "@/pages/trainer/ClientPlanPage";
+import { ClientDetailPage } from "@/pages/trainer/ClientDetailPage";
 import { PlanEditPage } from "@/pages/trainer/PlanEditPage";
 import { ExercisesPage } from "@/pages/trainer/ExercisesPage";
 import { ClientHome } from "@/pages/client/ClientHome";
 import { MyPlanPage } from "@/pages/client/MyPlanPage";
 import { WorkoutPage } from "@/pages/client/WorkoutPage";
+import { WorkoutHistoryPage } from "@/pages/client/WorkoutHistoryPage";
 import { PendingActivationPage } from "@/pages/client/PendingActivationPage";
 
 // Layouts
@@ -64,7 +65,7 @@ function App() {
           <Route element={<TrainerLayout />}>
             <Route path="/trainer" element={<Navigate to="/trainer/clients" replace />} />
             <Route path="/trainer/clients" element={<ClientsPage />} />
-            <Route path="/trainer/clients/:clientId" element={<ClientPlanPage />} />
+            <Route path="/trainer/clients/:clientId" element={<ClientDetailPage />} />
             <Route path="/trainer/clients/:clientId/plan/new" element={<PlanEditPage />} />
             <Route path="/trainer/clients/:clientId/plan/:planId/edit" element={<PlanEditPage />} />
             <Route path="/trainer/exercises" element={<ExercisesPage />} />
@@ -80,6 +81,7 @@ function App() {
           <Route element={<ClientLayout />}>
             <Route path="/client" element={<ClientHome />} />
             <Route path="/client/plan" element={<MyPlanPage />} />
+            <Route path="/client/history" element={<WorkoutHistoryPage />} />
           </Route>
           {/* Workout page: full-screen without bottom nav */}
           <Route path="/client/workout/:trainingDayId" element={<WorkoutPage />} />

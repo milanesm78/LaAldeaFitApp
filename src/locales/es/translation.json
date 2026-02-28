@@ -171,6 +171,21 @@
     "spanish": "Espanol",
     "english": "Ingles"
   },
+  "dashboard": {
+    "searchClients": "Buscar clientes",
+    "searchPlaceholder": "Buscar clientes...",
+    "noClients": "Aun no hay clientes registrados",
+    "noResults": "No se encontraron clientes",
+    "tryDifferentSearch": "Intenta con otro termino de busqueda.",
+    "clientCount": "{{count}} clientes",
+    "todayStatus": "Estado de hoy"
+  },
+  "clientDetail": {
+    "plan": "Plan",
+    "logs": "Registros",
+    "editPlan": "Editar Plan",
+    "noPlan": "Sin plan asignado"
+  },
   "status": {
     "active": "Activo",
     "inactive": "Inactivo",
@@ -179,7 +194,12 @@
     "archived": "Archivado",
     "completed": "Completado",
     "inProgress": "En Progreso",
-    "notStarted": "No Iniciado"
+    "notStarted": "No Iniciado",
+    "today": {
+      "completed": "Completado hoy",
+      "in_progress": "En progreso",
+      "not_started": "No iniciado"
+    }
   },
   "trainer": {
     "dashboard_title": "Gestion de Clientes",
