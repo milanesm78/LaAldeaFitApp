@@ -19,14 +19,14 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **EXER-01**: Trainer can create exercises with name and YouTube video link
 - [x] **EXER-02**: Trainer can edit and delete exercises from the library
-- [ ] **EXER-03**: Client can view exercise with inline YouTube video embed from their workout view
+- [x] **EXER-03**: Client can view exercise with inline YouTube video embed from their workout view
 
 ### Training Plans
 
 - [x] **PLAN-01**: Trainer can create a training plan for a specific client
 - [x] **PLAN-02**: Trainer can organize a plan by training days (Day A, Day B, etc.)
 - [x] **PLAN-03**: Trainer can add exercises to a training day with prescribed sets, reps, and weight
-- [ ] **PLAN-04**: Client can view their assigned training plan grouped by training day
+- [x] **PLAN-04**: Client can view their assigned training plan grouped by training day
 - [x] **PLAN-05**: Trainer can define training cycle length per client
 - [x] **PLAN-06**: Plans are versioned -- editing a plan creates a new version for the next cycle, preserving historical data
 
@@ -110,11 +110,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-05 | Phase 1 | Complete |
 | EXER-01 | Phase 1 | Complete |
 | EXER-02 | Phase 1 | Complete |
-| EXER-03 | Phase 2 | Pending |
+| EXER-03 | Phase 2 | Complete |
 | PLAN-01 | Phase 2 | Complete |
 | PLAN-02 | Phase 2 | Complete |
 | PLAN-03 | Phase 2 | Complete |
-| PLAN-04 | Phase 2 | Pending |
+| PLAN-04 | Phase 2 | Complete |
 | PLAN-05 | Phase 2 | Complete |
 | PLAN-06 | Phase 2 | Complete |
 | WLOG-01 | Phase 2 | Complete |

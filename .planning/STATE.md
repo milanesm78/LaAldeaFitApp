@@ -10,29 +10,29 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 2 of 4 (Core Training Loop)
-Plan: 1 of 4 in current phase
+Plan: 3 of 4 in current phase
 Status: In progress
-Last activity: 2026-02-28 - Completed quick task 3: when an account is created, log the user in and redirect them to the client or trainer pages
+Last activity: 2026-02-28 - Completed 02-03 (Client workout logger)
 
-Progress: [████░░░░░░] 40%
+Progress: [██████░░░░] 55%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
-- Average duration: 11min
-- Total execution time: ~45min
+- Total plans completed: 5
+- Average duration: 13min
+- Total execution time: ~76min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1 | 3 | ~35min | 12min |
-| 2 | 1 | 9min | 9min |
+| 2 | 2 | 31min | 16min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (20min), 01-02 (9min), 01-03 (~3min verification), 02-01 (9min)
-- Trend: Accelerating
+- Last 5 plans: 01-02 (9min), 01-03 (~3min verification), 02-01 (9min), 02-03 (22min)
+- Trend: Stable
 
 *Updated after each plan completion*
 
@@ -69,6 +69,15 @@ Recent decisions affecting current work:
 - [02-01]: useUpdateDraftPlan deletes and re-inserts days/exercises instead of patching
 - [02-01]: Optimistic updates on useLogSet for responsive gym-floor logging
 - [02-01]: Dashboard RPC with LATERAL JOINs computes all status in single query
+- [02-03]: Tabs for training day navigation (3-6 days fit horizontal mobile tab bar)
+- [02-03]: Collapsible exercise video behind tap to minimize distraction during logging
+- [02-03]: Weight stepper +/-2.5kg, reps stepper +/-1 for standard gym progression
+- [02-03]: Full-screen workout page without bottom nav for maximum screen space
+- [02-03]: Accordion-style exercise loggers so client can review previous exercises
+- [Phase 02]: [02-02]: Exercise names tracked via local state map since planSchema only stores exercise_id
+- [Phase 02]: [02-02]: ClientsPage uses useClientDashboard RPC for single-query client data with workout status
+- [Phase 02]: [02-02]: Exercise reordering via useFieldArray move() with up/down buttons (not drag-and-drop) for mobile-first v1
+- [Phase 02]: [02-02]: Day/exercise orders normalized to sequential values on form submit, not during editing
 
 ### Pending Todos
 
@@ -90,5 +99,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-28
-Stopped at: Completed quick task 3 (post-registration navigation)
-Resume file: .planning/quick/3-when-an-account-is-created-log-the-user-/3-SUMMARY.md
+Stopped at: Completed 02-03-PLAN.md
+Resume file: .planning/phases/02-core-training-loop/02-03-SUMMARY.md
