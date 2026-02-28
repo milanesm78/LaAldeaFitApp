@@ -79,7 +79,10 @@ function App() {
         >
           <Route element={<ClientLayout />}>
             <Route path="/client" element={<ClientHome />} />
+            <Route path="/client/plan" element={<MyPlanPage />} />
           </Route>
+          {/* Workout page: full-screen without bottom nav */}
+          <Route path="/client/workout/:trainingDayId" element={<WorkoutPage />} />
         </Route>
 
         {/* Client pending route (no activation required) */}

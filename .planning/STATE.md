@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 Phase: 2 of 4 (Core Training Loop)
 Plan: 1 of 4 in current phase
 Status: In progress
-Last activity: 2026-02-28 - Completed 02-01 (Phase 2 data layer)
+Last activity: 2026-02-28 - Completed quick task 3: when an account is created, log the user in and redirect them to the client or trainer pages
 
 Progress: [████░░░░░░] 40%
 
