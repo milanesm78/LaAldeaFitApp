@@ -50,8 +50,8 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md — Database schema, types, Zod schemas, query hooks, shared utilities (Phase 2 data layer)
-- [ ] 02-02-PLAN.md — Training plan builder with nested form, exercise picker, versioning, trainer pages
-- [ ] 02-03-PLAN.md — Client plan view, YouTube exercise embed, workout session logging with pre-fill and steppers
+- [x] 02-02-PLAN.md — Training plan builder with nested form, exercise picker, versioning, trainer pages
+- [x] 02-03-PLAN.md — Client plan view, YouTube exercise embed, workout session logging with pre-fill and steppers
 - [ ] 02-04-PLAN.md — Workout history, trainer dashboard with client status indicators, end-to-end verification
 
 ### Phase 3: Measurements and Progress
