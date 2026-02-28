@@ -2,16 +2,13 @@ import { z } from "zod";
 
 /**
  * Helper for optional/nullable measurement fields.
- * Converts undefined/NaN to null for DB storage.
+ * Accepts number or null; validates range when a number is provided.
  */
 function optionalMeasurement(min: number, max: number) {
-  return z
-    .number()
-    .min(min)
-    .max(max)
-    .nullable()
-    .optional()
-    .transform((v) => (v === undefined || (typeof v === "number" && isNaN(v)) ? null : v));
+  return z.union([
+    z.number().min(min).max(max),
+    z.null(),
+  ]);
 }
 
 /**

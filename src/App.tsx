@@ -16,6 +16,7 @@ import { MyPlanPage } from "@/pages/client/MyPlanPage";
 import { WorkoutPage } from "@/pages/client/WorkoutPage";
 import { WorkoutHistoryPage } from "@/pages/client/WorkoutHistoryPage";
 import { PendingActivationPage } from "@/pages/client/PendingActivationPage";
+import { NewMeasurementPage } from "@/pages/trainer/NewMeasurementPage";
 
 // Layouts
 import { TrainerLayout } from "@/layouts/TrainerLayout";
@@ -68,6 +69,7 @@ function App() {
             <Route path="/trainer/clients/:clientId" element={<ClientDetailPage />} />
             <Route path="/trainer/clients/:clientId/plan/new" element={<PlanEditPage />} />
             <Route path="/trainer/clients/:clientId/plan/:planId/edit" element={<PlanEditPage />} />
+            <Route path="/trainer/clients/:clientId/measurements/new" element={<NewMeasurementPage />} />
             <Route path="/trainer/exercises" element={<ExercisesPage />} />
           </Route>
         </Route>
