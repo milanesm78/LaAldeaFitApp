@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
@@ -62,21 +62,21 @@ export function PlanForm({
     };
   }, [existingPlan, clientId]);
 
-  // Build initial exercise names map from existing plan
-  const [exerciseNameMap] = useState<Record<string, string>>(() => {
+  // Build initial exercise names map from existing plan, keyed by dayIndex
+  const initialExerciseNamesByDay = useMemo<
+    Record<number, Record<number, string>>
+  >(() => {
     if (!existingPlan) return {};
-    const map: Record<string, string> = {};
+    const byDay: Record<number, Record<number, string>> = {};
     existingPlan.training_days.forEach((day, dayIdx) => {
+      const dayMap: Record<number, string> = {};
       day.plan_exercises.forEach((pe, exIdx) => {
-        map[`${dayIdx}-${exIdx}`] = pe.exercises?.name ?? "";
+        dayMap[exIdx] = pe.exercises?.name ?? "";
       });
+      byDay[dayIdx] = dayMap;
     });
-    return map;
-  });
-
-  // Expose name map via a stable ref that TrainingDayCard can use
-  // This is set once from existingPlan and then TrainingDayCard manages its own state
-  void exerciseNameMap;
+    return byDay;
+  }, [existingPlan]);
 
   const {
     control,
@@ -174,6 +174,7 @@ export function PlanForm({
             register={register}
             onRemove={() => removeDay(dayIndex)}
             errors={errors}
+            initialExerciseNames={initialExerciseNamesByDay[dayIndex]}
           />
         ))}
 

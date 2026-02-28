@@ -21,6 +21,7 @@ interface TrainingDayCardProps {
   register: UseFormRegister<PlanFormValues>;
   onRemove: () => void;
   errors: FieldErrors<PlanFormValues>;
+  initialExerciseNames?: Record<number, string>;
 }
 
 export function TrainingDayCard({
@@ -29,6 +30,7 @@ export function TrainingDayCard({
   register,
   onRemove,
   errors,
+  initialExerciseNames,
 }: TrainingDayCardProps) {
   const { t } = useTranslation();
   const [pickerOpen, setPickerOpen] = useState(false);
@@ -46,8 +48,9 @@ export function TrainingDayCard({
 
   // We need to store exercise names separately since the schema only has exercise_id.
   // We use a local map to track names for display.
+  // When editing, initialExerciseNames provides names from the existing plan.
   const [exerciseNames, setExerciseNames] = useState<Record<number, string>>(
-    {}
+    () => initialExerciseNames ?? {}
   );
 
   const handleAddExercise = (selected: {
