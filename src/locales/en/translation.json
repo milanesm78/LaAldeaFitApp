@@ -301,7 +301,7 @@
     "no_suggestions": "No pending suggestions",
     "current_weight": "Current",
     "suggested_weight": "Suggested",
-    "error_accept": "Failed to accept suggestion",
-    "error_dismiss": "Failed to dismiss suggestion"
+    "accept_error": "Failed to accept suggestion",
+    "dismiss_error": "Failed to dismiss suggestion"
   }
 }

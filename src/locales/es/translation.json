@@ -301,7 +301,7 @@
     "no_suggestions": "Sin sugerencias pendientes",
     "current_weight": "Actual",
     "suggested_weight": "Sugerido",
-    "error_accept": "Error al aceptar sugerencia",
-    "error_dismiss": "Error al descartar sugerencia"
+    "accept_error": "Error al aceptar sugerencia",
+    "dismiss_error": "Error al descartar sugerencia"
   }
 }

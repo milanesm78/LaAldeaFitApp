@@ -72,15 +72,19 @@ export function useAcceptSuggestion() {
   const { t } = useTranslation();
 
   return useMutation({
-    mutationFn: async (suggestionId: string) => {
+    mutationFn: async (vars: {
+      suggestionId: string;
+      exerciseName: string;
+      suggestedWeight: number;
+    }) => {
       const { error } = await supabase.rpc(
         "accept_progression_suggestion",
-        { p_suggestion_id: suggestionId }
+        { p_suggestion_id: vars.suggestionId }
       );
 
       if (error) throw error;
     },
-    onSuccess: () => {
+    onSuccess: (_data, variables) => {
       queryClient.invalidateQueries({
         queryKey: progressionKeys.all,
       });
@@ -88,7 +92,10 @@ export function useAcceptSuggestion() {
         queryKey: planKeys.all,
       });
       toast.success(
-        t("progression.accepted_toast", "Weight updated successfully")
+        t("progression.accepted_toast", "Weight updated successfully", {
+          weight: variables.suggestedWeight,
+          exercise: variables.exerciseName,
+        })
       );
     },
     onError: () => {

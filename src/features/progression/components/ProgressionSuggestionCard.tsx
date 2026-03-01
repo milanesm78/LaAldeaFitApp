@@ -39,7 +39,11 @@ export function ProgressionSuggestionCard({
     suggestion.plan_exercise.prescribed_weight_kg !== suggestion.current_weight_kg;
 
   const handleAccept = () => {
-    acceptMutation.mutate(suggestion.id);
+    acceptMutation.mutate({
+      suggestionId: suggestion.id,
+      exerciseName,
+      suggestedWeight: suggestion.suggested_weight_kg,
+    });
   };
 
   const handleDismiss = () => {
