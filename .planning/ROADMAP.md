@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 1: Foundation and Exercise Library** - Auth, roles, i18n, responsive scaffold, and exercise CRUD
 - [ ] **Phase 2: Core Training Loop** - Plan builder, workout logging, client/trainer dashboards
 - [ ] **Phase 3: Measurements and Progress** - Body measurement forms, strength and body composition charts
-- [ ] **Phase 4: Auto-Progression** - Smart weight increase suggestions based on logged performance
+- [x] **Phase 4: Auto-Progression** - Smart weight increase suggestions based on logged performance (completed 2026-03-01)
 
 ## Phase Details
 
@@ -77,7 +77,7 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. When a client logs 15+ reps on an exercise, the app displays a suggestion to increase weight by 2.5kg for the next session
   2. The suggestion is clearly presented as a recommendation that the client or trainer must confirm before it takes effect
-**Plans:** 3 plans
+**Plans:** 3/3 plans complete
 
 Plans:
 - [ ] 04-01-PLAN.md — Progression data layer: SQL migration (table, RPC functions, RLS), types, TanStack Query hooks, session completion integration
@@ -94,4 +94,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Foundation and Exercise Library | 3/4 | UAT gap closure pending | - |
 | 2. Core Training Loop | 2/4 | In progress | - |
 | 3. Measurements and Progress | 0/2 | Not started | - |
-| 4. Auto-Progression | 0/2 | Not started | - |
+| 4. Auto-Progression | 0/2 | Complete    | 2026-03-01 |
