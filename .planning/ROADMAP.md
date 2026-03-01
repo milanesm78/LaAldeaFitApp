@@ -47,13 +47,14 @@ Plans:
   3. Client can view their plan grouped by training day, tap an exercise to watch its YouTube video inline, start a workout session, and log weight and reps for each set
   4. Client can view their workout history showing past sessions with all logged sets and session duration
   5. Trainer can view a list of all clients with activity status, see color-coded indicators for today's workout completion, and drill into any client's plan and logs
-**Plans:** 4 plans
+**Plans:** 5 plans
 
 Plans:
 - [x] 02-01-PLAN.md — Database schema, types, Zod schemas, query hooks, shared utilities (Phase 2 data layer)
 - [x] 02-02-PLAN.md — Training plan builder with nested form, exercise picker, versioning, trainer pages
 - [x] 02-03-PLAN.md — Client plan view, YouTube exercise embed, workout session logging with pre-fill and steppers
 - [ ] 02-04-PLAN.md — Workout history, trainer dashboard with client status indicators, end-to-end verification
+- [ ] 02-05-PLAN.md — UAT gap closure: fix YouTube video not showing in client plan view (unified URL parsing)
 
 ### Phase 3: Measurements and Progress
 **Goal**: Clients and trainer can track body composition over time and visualize strength and measurement progress through charts
@@ -92,6 +93,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation and Exercise Library | 3/4 | UAT gap closure pending | - |
-| 2. Core Training Loop | 2/4 | In progress | - |
+| 2. Core Training Loop | 3/5 | UAT gap closure pending | - |
 | 3. Measurements and Progress | 0/2 | Not started | - |
 | 4. Auto-Progression | 0/2 | Complete    | 2026-03-01 |
