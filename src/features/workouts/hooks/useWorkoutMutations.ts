@@ -155,8 +155,9 @@ export function useCompleteSession() {
       // Fire-and-forget: check for progression eligibility after session completion.
       // Detection failure should not break session completion UX.
       try {
-        supabase
-          .rpc("check_progression_eligibility", { p_session_id: data.id })
+        Promise.resolve(
+          supabase.rpc("check_progression_eligibility", { p_session_id: data.id })
+        )
           .then(() => {
             queryClient.invalidateQueries({
               queryKey: progressionKeys.pending(data.clientId),

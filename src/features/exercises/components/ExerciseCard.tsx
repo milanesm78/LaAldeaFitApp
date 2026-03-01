@@ -2,36 +2,8 @@ import { useTranslation } from "react-i18next";
 import { Pencil, Trash2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { extractYouTubeVideoId } from "@/lib/utils/youtube";
 import type { Exercise } from "../types";
-
-/**
- * Extract YouTube video ID from URL for thumbnail display.
- */
-function extractYouTubeVideoId(url: string): string | null {
-  if (!url) return null;
-  try {
-    const parsed = new URL(url);
-    if (
-      parsed.hostname === "www.youtube.com" ||
-      parsed.hostname === "youtube.com" ||
-      parsed.hostname === "m.youtube.com"
-    ) {
-      const v = parsed.searchParams.get("v");
-      if (v) return v;
-      const pathMatch = parsed.pathname.match(
-        /^\/(embed|shorts)\/([a-zA-Z0-9_-]+)/
-      );
-      if (pathMatch) return pathMatch[2];
-    }
-    if (parsed.hostname === "youtu.be") {
-      const id = parsed.pathname.slice(1);
-      if (id) return id;
-    }
-  } catch {
-    // invalid URL
-  }
-  return null;
-}
 
 interface ExerciseCardProps {
   exercise: Exercise;

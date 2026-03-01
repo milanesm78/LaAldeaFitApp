@@ -1,28 +1,59 @@
 /**
- * Robust YouTube URL parser that handles 4+ URL formats users may paste.
- * Returns the 11-character video ID or null if no valid ID found.
+ * Robust YouTube URL parser using URL() for proper parsing.
+ * Single source of truth for YouTube URL parsing and validation.
  *
  * Supported formats:
- * - https://www.youtube.com/watch?v=dQw4w9WgXcQ
- * - https://youtu.be/dQw4w9WgXcQ
- * - https://www.youtube.com/embed/dQw4w9WgXcQ
- * - https://www.youtube.com/v/dQw4w9WgXcQ
- * - https://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=share
+ * - https://www.youtube.com/watch?v=VIDEO_ID
+ * - https://youtube.com/watch?v=VIDEO_ID
+ * - https://m.youtube.com/watch?v=VIDEO_ID
+ * - https://youtu.be/VIDEO_ID
+ * - https://www.youtube.com/embed/VIDEO_ID
+ * - https://www.youtube.com/shorts/VIDEO_ID
+ * - https://www.youtube.com/v/VIDEO_ID
+ * - All of the above with additional query params (e.g., ?feature=share)
  */
 export function extractYouTubeVideoId(url: string): string | null {
-  const patterns = [
-    /(?:youtube\.com\/watch\?v=)([a-zA-Z0-9_-]{11})/,
-    /(?:youtu\.be\/)([a-zA-Z0-9_-]{11})/,
-    /(?:youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
-    /(?:youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/,
-  ];
+  if (!url) return null;
 
-  for (const pattern of patterns) {
-    const match = url.match(pattern);
-    if (match) return match[1];
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname;
+
+    // youtube.com, www.youtube.com, m.youtube.com
+    if (
+      hostname === "youtube.com" ||
+      hostname === "www.youtube.com" ||
+      hostname === "m.youtube.com"
+    ) {
+      // /watch?v=VIDEO_ID
+      const v = parsed.searchParams.get("v");
+      if (v && /^[a-zA-Z0-9_-]+$/.test(v)) return v;
+
+      // /embed/VIDEO_ID, /shorts/VIDEO_ID, /v/VIDEO_ID
+      const pathMatch = parsed.pathname.match(
+        /^\/(embed|shorts|v)\/([a-zA-Z0-9_-]+)/
+      );
+      if (pathMatch) return pathMatch[2];
+    }
+
+    // youtu.be/VIDEO_ID
+    if (hostname === "youtu.be") {
+      const id = parsed.pathname.slice(1).split("/")[0];
+      if (id && /^[a-zA-Z0-9_-]+$/.test(id)) return id;
+    }
+  } catch {
+    // invalid URL
   }
 
   return null;
+}
+
+/**
+ * Check if a URL is a valid YouTube URL that can produce a playable video.
+ * Tied directly to extractability -- if we can extract a video ID, the URL is valid.
+ */
+export function isValidYouTubeUrl(url: string): boolean {
+  return extractYouTubeVideoId(url) !== null;
 }
 
 /**

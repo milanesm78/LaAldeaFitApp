@@ -5,57 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { DecimalInput } from "@/components/DecimalInput";
+import { extractYouTubeVideoId, isValidYouTubeUrl } from "@/lib/utils/youtube";
 import type { Exercise, ExerciseFormData } from "../types";
-
-/**
- * Extract YouTube video ID from various URL formats:
- * - https://www.youtube.com/watch?v=VIDEO_ID
- * - https://youtu.be/VIDEO_ID
- * - https://www.youtube.com/embed/VIDEO_ID
- * - https://www.youtube.com/shorts/VIDEO_ID
- */
-function extractYouTubeVideoId(url: string): string | null {
-  if (!url) return null;
-  try {
-    const parsed = new URL(url);
-    if (
-      parsed.hostname === "www.youtube.com" ||
-      parsed.hostname === "youtube.com" ||
-      parsed.hostname === "m.youtube.com"
-    ) {
-      // /watch?v=ID
-      const v = parsed.searchParams.get("v");
-      if (v) return v;
-      // /embed/ID or /shorts/ID
-      const pathMatch = parsed.pathname.match(
-        /^\/(embed|shorts)\/([a-zA-Z0-9_-]+)/
-      );
-      if (pathMatch) return pathMatch[2];
-    }
-    if (parsed.hostname === "youtu.be") {
-      const id = parsed.pathname.slice(1);
-      if (id) return id;
-    }
-  } catch {
-    // invalid URL
-  }
-  return null;
-}
-
-function isValidYouTubeUrl(url: string): boolean {
-  if (!url) return false;
-  try {
-    const parsed = new URL(url);
-    return (
-      parsed.hostname === "www.youtube.com" ||
-      parsed.hostname === "youtube.com" ||
-      parsed.hostname === "m.youtube.com" ||
-      parsed.hostname === "youtu.be"
-    );
-  } catch {
-    return false;
-  }
-}
 
 interface ExerciseFormProps {
   exercise?: Exercise;
