@@ -22,7 +22,7 @@ export function LoginPage() {
       </div>
       <div className="flex w-full flex-col items-center gap-6">
         <div className="text-center">
-          <h1 className="text-3xl font-bold tracking-tight">JavierFitness</h1>
+          <h1 className="text-3xl font-bold tracking-tight">La Aldea Fit</h1>
         </div>
         <LoginForm />
       </div>
