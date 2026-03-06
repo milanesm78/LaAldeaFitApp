@@ -125,9 +125,10 @@ None yet.
 |---|-------------|------|--------|-----------|
 | 1 | connect project to supabase | 2026-02-24 | be457a5 | [1-connect-project-to-supabase](./quick/1-connect-project-to-supabase/) |
 | 3 | post-registration navigation to role portal | 2026-02-28 | f8f4c75 | [3-when-an-account-is-created-log-the-user-](./quick/3-when-an-account-is-created-log-the-user-/) |
+| 4 | rename GitHub repo to LaAldeaFitApp | 2026-03-05 | 3423da2 | [4-change-the-github-repo-s-name-to-laaldea](./quick/4-change-the-github-repo-s-name-to-laaldea/) |
 
 ## Session Continuity
 
-Last session: 2026-03-01
-Stopped at: Completed 02-04-PLAN.md (SUMMARY backfill)
-Resume file: .planning/phases/02-core-training-loop/02-04-SUMMARY.md
+Last session: 2026-03-05
+Stopped at: Completed quick-4 (rename repo to LaAldeaFitApp)
+Resume file: .planning/quick/4-change-the-github-repo-s-name-to-laaldea/4-SUMMARY.md
