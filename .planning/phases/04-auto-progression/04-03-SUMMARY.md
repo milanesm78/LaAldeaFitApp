@@ -64,7 +64,7 @@ Each task was committed atomically:
 
 1. **Task 1: Fix accepted_toast interpolation and error key mismatches** - `f55a9d6` (fix)
 
-**Plan metadata:** [pending] (docs: complete plan)
+**Plan metadata:** `1294199` (docs: complete plan)
 
 ## Files Created/Modified
 - `src/features/progression/hooks/useProgression.ts` - Changed useAcceptSuggestion mutationFn to accept context object with exerciseName and suggestedWeight; onSuccess uses variables for toast interpolation
